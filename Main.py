@@ -2,25 +2,14 @@ from typing import Optional
 
 
 class Node:
-    """
-    Provide necessary documentation
-    """
     def __init__(self, data=None, next=None):
-        """
-        Provide necessary documentation
-        """
         self.data = data
         self.next = next
 
 
 class LinkedList:
-    """
-    Provide necessary documentation
-    """
+  
     def __init__(self):
-        """
-        Initialize the head
-        """
         self.head = None
 
     def insert_at_end(self, data):
@@ -28,13 +17,21 @@ class LinkedList:
         Insert node at end of the list
         :param data: integer data that will be used to create a node
         """
-        # Write code here
+        newNode = Node(data)
+        if(self.head):
+            current = self.head
+            while(current.next):
+                current = current.next
+                current.next = newNode
+        else:
+            self.head = newNode
 
     def status(self):
         """
         It prints all the elements of list.
         """
-        # write code here
+        for i in self.next:
+            print(self.data)
 
 
 class Solution:
@@ -47,7 +44,16 @@ class Solution:
         :param second_list: Linkedlist with non-negative integers
         :return: returns the sum as a linked list
         """
-        # Write code here
+        s=""
+        s1=""
+        for i in first_list:
+            s=str(i)+s
+        for j in second_list:
+            s1=str(j)+s1
+        a=int(s)
+        b=int(s1)
+        c=a+b
+        return c
         
         
 
